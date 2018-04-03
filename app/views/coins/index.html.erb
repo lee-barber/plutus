@@ -1,34 +1,61 @@
 <h1>Coins</h1>
+<br/>
 
-<table>
+<table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
-      <th>Symbol</th>
-      <th>User</th>
-      <th>Cost per</th>
+      <th>Name</th>
+      <th>Current Price</th>
+      <th>Ranking</th>
+      <th>1 HR % </th>
+      <th>24 HR % </th>
+      <th>7 Day %</th>
+      <th>Current Value</th>
+      <th>Total Paid</th>
+      <th>Profit/Loss</th>
+      <th>Cost Paid Per</th>
       <th>Amount owned</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @coins.each do |coin| %>
-    <!-- if the coin user ID is the same as the registered user ID then allow the following actions -->
-    <% if coin.user_id == current_user.id %>
-      <tr>
-        <td><%= coin.symbol %></td>
-        <td><%= coin.user_id %></td>
-        <td><%= coin.cost_per %></td>
-        <td><%= coin.amount_owned %></td>
-        <td><%= link_to 'Show', coin %></td>
-        <td><%= link_to 'Edit', edit_coin_path(coin) %></td>
-        <td><%= link_to 'Destroy', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if coin.user_id == current_user.id %>
+        <% if coin.symbol %>
+          <% coin.symbol = coin.symbol.upcase %>
+        <% end %>
+        <tr>
+        <% for x in @search_coin_data %>
+          <% if coin.symbol == x["symbol"] %>
+              <td><%= link_to x["name"], coin %></td>
+              <td><%= x["price_usd"] %></td>
+              <td><%= x["rank"] %></td>
+              <td><%= x["percent_change_1h"] %>%</td>
+              <td><%= x["percent_change_24h"] %>%</td>
+              <td><%= x["percent_change_7d"] %>%</td>
+              <td>$<%= x["price_usd"].to_d * coin.amount_owned %></td>
+              <td>$<%= coin.cost_per * coin.amount_owned %></td>
+              <td>$<%= (x["price_usd"].to_d * coin.amount_owned) - (coin.cost_per * coin.amount_owned)  %></td>
+              <% @profit_loss += (x["price_usd"].to_d * coin.amount_owned) - (coin.cost_per * coin.amount_owned)  %>
+          <% end %>
+        <% end %>
+        
+          <td>$<%= coin.cost_per %></td>
+          <td><%= coin.amount_owned %></td>
+        </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br/>
+<br/>
 
-<%= link_to 'New Coin', new_coin_path %>
+<!-- an instance variable @profit_loss was created in the coins controller to set the initial value to 0 -->
+<strong>Portfolio Profit/Loss: </strong> <%= number_to_currency(@profit_loss) %>
+<br/><br/>
+
+<br/><br/>
+
+<%= link_to 'Add Coins', new_coin_path, class: "btn btn-default" %>
+

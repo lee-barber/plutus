@@ -1,7 +1,6 @@
 class MainController < ApplicationController
   def index
-  	# instance variables:
-  	# API URL
+
   	require 'net/http'
   	require 'json'
 
@@ -21,8 +20,6 @@ class MainController < ApplicationController
 
   def search
 
-    # instance variables:
-    # API URL
     require 'net/http'
     require 'json'
 

@@ -1,22 +1,45 @@
-<p>
-  <strong>Symbol:</strong>
-  <%= @coin.symbol %>
-</p>
+<% for x in @show_my_coin %>
+<!-- if the crypto symbol from our wallet matches the API... -->
+  <% if @coin.symbol.upcase == x["symbol"] %>
+      <% coin_name = x["name"] %> 
+      <% coin_price = x["price_usd"] %>
+      <% coin_rank = x["rank"] %>
+  <% end %>
+<% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @coin.user_id %>
-</p>
-
-<p>
-  <strong>Cost per:</strong>
-  <%= @coin.cost_per %>
-</p>
-
-<p>
-  <strong>Amount owned:</strong>
-  <%= @coin.amount_owned %>
-</p>
-
-<%= link_to 'Edit', edit_coin_path(@coin) %> |
-<%= link_to 'Back', coins_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= coin_name %></h3>
+  </div>
+  <div class="panel-body">
+  
+  <h1><%= @coin.symbol.upcase %></h1>
+  
+  <br/><br/>
+  
+  <p>
+    <strong>Current Price: </strong> <%= number_to_currency(coin_price) %>
+  </p>
+  
+  <p>
+    <strong>Rank: </strong> <%= coin_rank %>
+  </p>
+  
+  <p>
+    <strong>Cost per:</strong>
+    <%= @coin.cost_per %>
+  </p>
+  
+  <p>
+    <strong>Amount owned:</strong>
+    <%= @coin.amount_owned %>
+  </p>
+  
+  </div>
+    <div class="panel-footer">
+      <%= link_to 'Back', coins_path %> |
+      <%= link_to 'Edit', edit_coin_path(@coin) %> |
+      <%= link_to 'Delete', coin_path(@coin), method: :delete, data: { confirm: "Are you sure? You're supposed to HODL!" } %>
+    </div>
+  </div>
+  

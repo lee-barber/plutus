@@ -9,11 +9,34 @@ class CoinsController < ApplicationController
   # GET /coins.json
   def index
     @coins = Coin.all
+    require 'net/http'
+    require 'json'
+
+    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    # call the URI class and input the given URL
+    @uri = URI(@url)
+    # go to the given API website via http
+    @response =  Net::HTTP.get(@uri)
+    # parse the API result with JSON and place it inside the "coins" variable
+    @search_coin_data = JSON.parse(@response)
+    @profit_loss = 0
   end
+
 
   # GET /coins/1
   # GET /coins/1.json
   def show
+    @coins = Coin.all
+    require 'net/http'
+    require 'json'
+
+    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    # call the URI class and input the given URL
+    @uri = URI(@url)
+    # go to the given API website via http
+    @response =  Net::HTTP.get(@uri)
+    # parse the API result with JSON and place it inside the "coins" variable
+    @show_my_coin = JSON.parse(@response)
   end
 
   # GET /coins/new
