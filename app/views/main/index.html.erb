@@ -1,0 +1,13 @@
+<h1>Plutus</h1>
+
+<p>The future of currency management</p>
+
+<% @coins %>
+
+<% for x in @coins %>
+	<% for coin in @wallet %>
+		<% if coin == x["symbol"] %>
+			<%= x["name"] %>  $<%= x["price_usd"] %></br>Rank:  <%= x["rank"] %></br></br>
+		<% end %>
+	<% end %>
+<% end %>
