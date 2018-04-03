@@ -19,7 +19,10 @@
         <li><%= link_to "About", main_about_path %>
         <li><%= link_to "Search", main_search_path %></li>
 
+
         <% if user_signed_in? %>
+        <li><%= link_to "Add Coins", new_coin_path %></li>
+        <li><%= link_to "My Wallet", coins_path %></li>
         <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>

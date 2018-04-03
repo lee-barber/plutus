@@ -1,0 +1,34 @@
+<h1>Coins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>User</th>
+      <th>Cost per</th>
+      <th>Amount owned</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coins.each do |coin| %>
+    <!-- if the coin user ID is the same as the registered user ID then allow the following actions -->
+    <% if coin.user_id == current_user.id %>
+      <tr>
+        <td><%= coin.symbol %></td>
+        <td><%= coin.user_id %></td>
+        <td><%= coin.cost_per %></td>
+        <td><%= coin.amount_owned %></td>
+        <td><%= link_to 'Show', coin %></td>
+        <td><%= link_to 'Edit', edit_coin_path(coin) %></td>
+        <td><%= link_to 'Destroy', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coin', new_coin_path %>
