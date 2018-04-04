@@ -4,14 +4,14 @@ class MainController < ApplicationController
   	require 'net/http'
   	require 'json'
 
-  	@url = 'https://api.coinmarketcap.com/v1/ticker/'
+  	@url = 'https://api.coinmarketcap.com/v1/ticker/?limit=2000'
   	# call the URI class and input the given URL
   	@uri = URI(@url)
   	# go to the given API website via http
   	@response =  Net::HTTP.get(@uri)
   	# parse the API result with JSON and place it inside the "coins" variable
   	@coins = JSON.parse(@response)
-  	@wallet = ["BTC", "ETH", "XRP", "BCH", "LTC", "EOS", "XLM", "ADA", "NEO"]
+  	@trending = ["BTC", "ETH", "XRP", "BCH", "LTC", "EOS", "XLM", "ADA", "NEO", "MIOTA"]
 
   end
 
@@ -23,7 +23,7 @@ class MainController < ApplicationController
     require 'net/http'
     require 'json'
 
-    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    @url = 'https://api.coinmarketcap.com/v1/ticker/?limit=2000'
     # call the URI class and input the given URL
     @uri = URI(@url)
     # go to the given API website via http
@@ -44,9 +44,10 @@ class MainController < ApplicationController
     end
 
     # if cryptocurrency does not exist, return error
-    # if @symbol == 
+    # if @symbol == !@symbol
     #   @symbol = "This cryptocurrency does not exist."
+    # end
 
-  end
+end
 
 end

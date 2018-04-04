@@ -2,8 +2,8 @@
 
 <div>
 <%= form_tag main_search_path, :method => 'POST' do %>
-  <%= text_field_tag 'crypto', nil, placeholder: 'Enter Crypto Symbol', size: 50 %>
-  <%= submit_tag 'Search' %>
+  <%= text_field_tag 'crypto', nil, placeholder: 'Enter Crypto Symbol (e.g. "BTC")', size: 50, :required => 'required' %></br></br>
+  <%= submit_tag 'Search', class: "btn btn-default" %>
 <% end %>
 </div>	
 
@@ -14,7 +14,9 @@
 <% if @symbol %>
 <% for x in @search_coin %>
 		<% if @symbol == x["symbol"] %>
-			<%= x["name"] %>  $<%= x["price_usd"] %></br>Rank:  <%= x["rank"] %></br></br>
+			Coin:  <%= x["name"] %></br> Current Price: $<%= x["price_usd"] %></br>Current Rank:  <%= x["rank"] %></br></br>
 		<% end %>
 	<% end %>
 <% end %>
+
+	

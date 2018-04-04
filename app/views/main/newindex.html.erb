@@ -1,0 +1,42 @@
+<h1>Plutus</h1>
+
+<h4>The future of cryptocurrency management.</h4>
+
+</br>
+
+<p>
+
+
+<% @coins %>
+
+<% for x in @coins %>
+<% for coin in @trending %>
+<% if coin == x["symbol"] %>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <!-- an instance variable @profit_loss was created in the coins controller index to set the initial value of "@total_invest" to 0 -->
+      <th><h5><strong>Coin</strong></h5></th>
+      <!-- an instance variable @profit_loss was created in the coins controller index to set the initial value of "@profit_loss" to 0 -->
+      <th><h5><strong>Current Price</strong></h5></th>
+      <!-- an instance variable @profit_loss was created in the coins controller index to set the initial value of "@total_invest" to 0 -->
+      <th><h5><strong>Current Rank</strong></h5></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= x["name"] %></td>
+      <td> $<%= x["price_usd"] %></td>
+      <td><%= x["rank"] %></td>
+    </tr>
+  
+<% end %>
+
+<% end %>
+
+<% end %>
+
+  </tbody>
+</table>

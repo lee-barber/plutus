@@ -1,13 +1,19 @@
 <h1>Plutus</h1>
 
-<p>The future of currency management</p>
+<h4>The future of cryptocurrency management.</h4>
+
+</br>
+
+<p>
+
 
 <% @coins %>
 
 <% for x in @coins %>
-	<% for coin in @wallet %>
+	<% for coin in @trending %>
 		<% if coin == x["symbol"] %>
-			<%= x["name"] %>  $<%= x["price_usd"] %></br>Rank:  <%= x["rank"] %></br></br>
+			Coin:  <%= x["name"] %></br> Current Price: $<%= x["price_usd"] %></br>Current Rank:  <%= x["rank"] %></br></br>
 		<% end %>
 	<% end %>
 <% end %>
+</p>

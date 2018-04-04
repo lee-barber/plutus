@@ -12,7 +12,7 @@ class CoinsController < ApplicationController
     require 'net/http'
     require 'json'
 
-    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    @url = 'https://api.coinmarketcap.com/v1/ticker/?limit=2000'
     # call the URI class and input the given URL
     @uri = URI(@url)
     # go to the given API website via http
@@ -20,6 +20,8 @@ class CoinsController < ApplicationController
     # parse the API result with JSON and place it inside the "coins" variable
     @search_coin_data = JSON.parse(@response)
     @profit_loss = 0
+    @total_invest = 0
+    @total_value = 0
   end
 
 
@@ -30,7 +32,7 @@ class CoinsController < ApplicationController
     require 'net/http'
     require 'json'
 
-    @url = 'https://api.coinmarketcap.com/v1/ticker/'
+    @url = 'https://api.coinmarketcap.com/v1/ticker/?limit=2000'
     # call the URI class and input the given URL
     @uri = URI(@url)
     # go to the given API website via http
@@ -96,7 +98,7 @@ class CoinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coin_params
-      params.require(:coin).permit(:symbol, :user_id, :cost_per, :amount_owned)
+      params.require(:coin).permit(:symbol, :user_id, :cost_per, :amount_owned, :purchased_on)
     end
 
 # custom method not written by rails

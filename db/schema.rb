@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403155533) do
+ActiveRecord::Schema.define(version: 20180404150820) do
 
   create_table "coins", force: :cascade do |t|
     t.string "symbol"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180403155533) do
     t.decimal "amount_owned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "purchased_on"
     t.index ["user_id"], name: "index_coins_on_user_id"
   end
 

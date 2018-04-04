@@ -15,4 +15,7 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
+
+// added "require bootstrap" to enable hamburger menu in navbar

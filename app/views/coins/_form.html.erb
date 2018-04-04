@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :symbol %>
-    <%= form.text_field :symbol, id: :coin_symbol %>
+    <%= form.label :purchased_on %></br>
+    <%= form.date_field :purchased_on, id: :purchased_on, :required => 'required' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :symbol %></br>
+    <%= form.text_field :symbol, id: :coin_symbol, :required => 'required' %>
   </div>
 
   <div class="field">
@@ -22,16 +27,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :cost_per %>
-    <%= form.text_field :cost_per, id: :coin_cost_per %>
+    <%= form.label :cost_per %></br>
+    <%= form.text_field :cost_per, id: :coin_cost_per, :required => 'required' %>
   </div>
 
   <div class="field">
-    <%= form.label :amount_owned %>
-    <%= form.text_field :amount_owned, id: :coin_amount_owned %>
+    <%= form.label :amount_owned %></br>
+    <%= form.text_field :amount_owned, id: :coin_amount_owned, :required => 'required' %>
   </div>
 
+</br>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add Coins", class: "btn btn-default" %>
   </div>
 <% end %>

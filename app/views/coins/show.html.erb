@@ -14,9 +14,14 @@
   <div class="panel-body">
   
   <h1><%= @coin.symbol.upcase %></h1>
+
   
   <br/><br/>
   
+  <p>
+    <strong>Date of Purchase:  <%= @coin.purchased_on %></strong>
+  </p>
+
   <p>
     <strong>Current Price: </strong> <%= number_to_currency(coin_price) %>
   </p>
