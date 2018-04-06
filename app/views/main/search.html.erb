@@ -15,7 +15,7 @@
 <% for x in @search_coin %>
 		<% if @symbol == x["symbol"] %>
 		<div class="search_results">
-			Coin Name:  <%= x["name"] %></br> Coin Symbol:  <%= x["symbol"] %></br> Current Price: <%= number_to_currency(x["price_usd"]) %></br>Current Rank:  <%= x["rank"] %> of 1,600</br>In Circulation:  <%= number_with_delimiter(x["total_supply"]) %></br>Max Supply:  <%= number_with_delimiter(x["max_supply"]) %></br>Percent Change 1 hr:  <%= number_with_delimiter(x["percent_change_1h"]) %>%</br>Percent Change 24 hr:  <%= number_with_delimiter(x["percent_change_24h"]) %>%</br>Percent Change 7 day:  <%= number_with_delimiter(x["percent_change_7d"]) %>%</br></div>
+			Coin Name:  <%= x["name"] %></br> Coin Symbol:  <%= x["symbol"] %></br> Current Price: <%= number_to_currency(x["price_usd"]) %></br>Current Rank:  <%= x["rank"] %> of 1,600</br>In Circulation:  <%= number_with_delimiter(x["total_supply"]) %></br>Max Supply:  <%= number_with_delimiter(x["max_supply"]) %></br>Percent Change 1 Hr:  <%= number_with_delimiter(x["percent_change_1h"]) %>%</br>Percent Change 24 Hr:  <%= number_with_delimiter(x["percent_change_24h"]) %>%</br>Percent Change 7 Day:  <%= number_with_delimiter(x["percent_change_7d"]) %>%</br></div>
 		<% end %>
 	<% end %>
 <% end %>
