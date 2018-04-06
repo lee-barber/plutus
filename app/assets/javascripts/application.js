@@ -19,3 +19,17 @@
 
 // added "require bootstrap" to enable hamburger menu in navbar
 // removed "= require jquery_ujs" because it was causing two alert confirm boxes when coin is deleted (Jeremy says that jquery_ujs is required if I'm using jQuery but maybe I can leave it out as long as it's not breaking anything?)
+
+
+$(function() {
+  $(".expand").on( "click", function() {
+    // $(this).next().slideToggle(200);
+    $expand = $(this).find(">:first-child");
+    
+    if($expand.text() == "+") {
+      $expand.text("-");
+    } else {
+      $expand.text("+");
+    }
+  });
+});

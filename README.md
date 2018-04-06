@@ -32,6 +32,7 @@ Did you break it?  Please [contact me](mailto:lee@leebarber.io) and let me know 
 
 * [HTML](https://developers.google.com/web) - The web framework used
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Cascading Style Sheets
+* [JavaScript](https://www.javascript.com) - Minor animations throughout 
 * [Bootstrap](https://getbootstrap.com) - Responsive front-end library for design
 * [jQuery](https://jquery.com) - JavaScript library for simple AJAX calls and DOM manipulation
 * [Ruby on Rails](http://rubyonrails.org) - The core functionality and database logic 

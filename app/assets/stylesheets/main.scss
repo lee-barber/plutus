@@ -55,14 +55,39 @@
 	margin-left: 38%;
 }
 
+// search entry functions
+.search-form {
+	margin-left: 30%;
+	margin-right: 30%;
+	border: 2px solid black;
+	border-radius: 25px;
+	border-color: #FF007B;
+	background-color: #434A73;
+	width: 450px;
+	padding: 20px;
+	margin-top: 3%;
+}
 // search results that populate
 .search-results {
+	margin-left: 35%;
+	margin-right: 30%;
 	font-size: 20px;
-	margin-bottom: 40px;
-	position: absolute;
 }
 
 // list of 1600 coins
 .all-coins {
+
+}
+
+// Plutus icon on about page
+.plutus-icon {
+	margin-left: 35%;
+
+}
+
+// Plutus text beneath icon on about page
+.plutus-text {
+	margin-left: 15%;
+	margin-right: 15%;
 
 }
