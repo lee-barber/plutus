@@ -1,6 +1,6 @@
 # Plutus
 
-v0.1.0
+v1.0.0
 
 This is a stand-alone web application that provides cryptocurrency enthusiasts a platform to analyze historical and current market data of digital coin values.  Users are provided with full CRUD (Create, Read, Update, Destroy) functionality to create their own account and enter personal investment information to track their profits and losses of coins that they have purchased.
 
