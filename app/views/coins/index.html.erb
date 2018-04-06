@@ -60,7 +60,7 @@
           <!-- cost per coin -->
           <td><%= number_to_currency(coin.cost_per) %></td>
           <!-- coins owned -->
-          <td><%= coin.amount_owned %></td>
+          <td><%= number_with_delimiter(coin.amount_owned) %></td>
         </tr>
       <% end %>
     <% end %>

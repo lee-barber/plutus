@@ -37,9 +37,9 @@
 
   <!-- Footer Begins -->
   
-  <p><strong>Cost per:  </strong><%= number_to_currency(@coin.cost_per) %></p>
+  <p><strong>Paid Per Coin:  </strong><%= number_to_currency(@coin.cost_per) %></p>
   
-  <p><strong>Amount owned:  </strong><%= @coin.amount_owned %> coins</p>
+  <p><strong>Amount owned:  </strong><%= number_with_delimiter(@coin.amount_owned) %> coins</p>
   
   <!-- Footer Ends -->
 
