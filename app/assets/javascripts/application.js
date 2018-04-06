@@ -12,10 +12,10 @@
 //
 //= require bootstrap-sprockets
 //= require jquery
-//= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
 
 // added "require bootstrap" to enable hamburger menu in navbar
+// removed "= require jquery_ujs" because it was causing two alert confirm boxes when coin is deleted (Jeremy says that jquery_ujs is required if I'm using jQuery but maybe I can leave it out as long as it's not breaking anything?)

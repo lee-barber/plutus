@@ -9,7 +9,7 @@ end
 gem 'devise', '~> 4.4', '>= 4.4.3'
 # Use rdoc generator html with javascript search index
 gem 'sdoc', '~> 0.4.1', group: :doc
-# user jQuery
+# Use jQuery
 gem 'jquery-rails'
 # Use bootstrap styling
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'

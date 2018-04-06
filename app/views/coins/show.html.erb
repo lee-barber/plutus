@@ -4,42 +4,45 @@
       <% coin_name = x["name"] %> 
       <% coin_price = x["price_usd"] %>
       <% coin_rank = x["rank"] %>
+      <% coin_percent_change_1h = x["percent_change_1h"] %>
+      <% coin_percent_change_24h = x["percent_change_24h"] %>
+      <% coin_percent_change_7d = x["percent_change_7d"] %>
   <% end %>
 <% end %>
 
+<!-- Header begins -->
+
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><%= coin_name %></h3>
-  </div>
+    <h3 class="panel-title"><%= coin_name %></h3></div>
   <div class="panel-body">
   
-  <h1><%= @coin.symbol.upcase %></h1>
+  <h1><%= @coin.symbol.upcase %></h1><br/>
 
-  
-  <br/><br/>
-  
-  <p>
-    <strong>Date of Purchase:  <%= @coin.purchased_on %></strong>
-  </p>
+  <!-- Header ends -->
 
-  <p>
-    <strong>Current Price: </strong> <%= number_to_currency(coin_price) %>
-  </p>
+  <p><strong>Date of Purchase:  </strong><%= @coin.purchased_on.strftime("%B %d, %Y") %></p>
+
+  <p><strong>Coin Name:  </strong> <%= coin_name %> </p>
+
+  <p><strong>Current Price: </strong><%= number_to_currency(coin_price) %></p>
   
-  <p>
-    <strong>Rank: </strong> <%= coin_rank %>
-  </p>
+  <p><strong>Rank:  </strong><%= coin_rank %> of 1,600</p>
+
+  <p><strong>1 Hr % Change:  </strong><%= coin_percent_change_1h %>%</p>
+
+  <p><strong>24 Hr % Change:  </strong><%= coin_percent_change_24h %>%</p>
+
+  <p><strong>7 Day % Change:  </strong><%= coin_percent_change_7d %>%</p>
+
+  <!-- Footer Begins -->
   
-  <p>
-    <strong>Cost per:</strong>
-    <%= @coin.cost_per %>
-  </p>
+  <p><strong>Cost per:  </strong><%= number_to_currency(@coin.cost_per) %></p>
   
-  <p>
-    <strong>Amount owned:</strong>
-    <%= @coin.amount_owned %>
-  </p>
+  <p><strong>Amount owned:  </strong><%= @coin.amount_owned %> coins</p>
   
+  <!-- Footer Ends -->
+
   </div>
     <div class="panel-footer">
       <%= link_to 'Back', coins_path %> |

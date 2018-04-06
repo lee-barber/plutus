@@ -7,14 +7,14 @@
       <th>Purchased</th>
       <th>Name</th>
       <th>Current Price</th>
-      <th>Ranking</th>
-      <th>1 HR % </th>
-      <th>24 HR % </th>
+      <th>Rank</th>
+      <th>1 Hr % </th>
+      <th>24 Hr % </th>
       <th>7 Day %</th>
       <th>Current Value</th>
       <th>Total Paid</th>
       <th>Profit/Loss</th>
-      <th>Cost Per Coin</th>
+      <th>Paid Per Coin</th>
       <th>Coins Owned</th>
     </tr>
   </thead>
@@ -29,13 +29,13 @@
         <% for x in @search_coin_data %>
           <% if coin.symbol == x["symbol"] %>
               <!-- purchased date -->
-              <td><%= coin.purchased_on.to_date %></td>
+              <td><%= coin.purchased_on.strftime("%B %d, %Y") %></td>
               <!-- coin name -->
               <td><%= link_to x["name"], coin %></td>
               <!-- current price -->
               <td><%= number_to_currency(x["price_usd"]) %></td>
               <!-- ranking -->
-              <td><%= x["rank"] %></td>
+              <td># <%= x["rank"] %></td>
               <!-- 1 HR % -->
               <td><%= x["percent_change_1h"] %>%</td>
               <!-- 24 HR % -->
@@ -44,7 +44,7 @@
               <td><%= x["percent_change_7d"] %>%</td>
               <!-- current value -->
               <td><%= number_to_currency(x["price_usd"].to_d * coin.amount_owned) %></td>
-              <!-- total paid -->
+              <!-- paid per coin -->
               <td><%= number_to_currency(coin.cost_per * coin.amount_owned) %></td>
               <!-- profit/loss -->
               <td><%= number_to_currency((x["price_usd"].to_d * coin.amount_owned) - (coin.cost_per * coin.amount_owned)) %></td>
@@ -57,9 +57,9 @@
               
           <% end %>
         <% end %>
-          <!-- cost paid per coin -->
+          <!-- cost per coin -->
           <td><%= number_to_currency(coin.cost_per) %></td>
-          <!-- total amount of coins owned -->
+          <!-- coins owned -->
           <td><%= coin.amount_owned %></td>
         </tr>
       <% end %>

@@ -54,7 +54,6 @@ class CoinsController < ApplicationController
   # POST /coins.json
   def create
     @coin = Coin.new(coin_params)
-
     respond_to do |format|
       if @coin.save
         format.html { redirect_to @coin, notice: 'Coin was successfully added.' }

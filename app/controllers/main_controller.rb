@@ -11,7 +11,7 @@ class MainController < ApplicationController
   	@response =  Net::HTTP.get(@uri)
   	# parse the API result with JSON and place it inside the "coins" variable
   	@coins = JSON.parse(@response)
-  	@trending = ["BTC", "ETH", "XRP", "BCH", "LTC", "EOS", "XLM", "ADA", "NEO", "MIOTA"]
+  	# @trending = ["BTC", "ETH", "XRP", "BCH", "LTC", "EOS", "XLM", "ADA", "NEO", "MIOTA"]
 
   end
 
@@ -30,6 +30,7 @@ class MainController < ApplicationController
     @response =  Net::HTTP.get(@uri)
     # parse the API result with JSON and place it inside the "coins" variable
     @search_coin = JSON.parse(@response)
+    @coins = JSON.parse(@response)
 
     @symbol = params[:crypto]
 
@@ -42,11 +43,6 @@ class MainController < ApplicationController
     if @symbol == ""
       @symbol = "Please enter a search value."
     end
-
-    # if cryptocurrency does not exist, return error
-    # if @symbol == !@symbol
-    #   @symbol = "This cryptocurrency does not exist."
-    # end
 
 end
 

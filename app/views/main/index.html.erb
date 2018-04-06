@@ -1,19 +1,97 @@
+<div class="top-index">
 <h1>Plutus</h1>
 
 <h4>The future of cryptocurrency management.</h4>
 
 </br>
+</div>
 
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+   <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="/crypto.jpeg" class="img_scroll" data-src="holder.js/900x500/auto/#7cbf00:#fff/text: " alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>The World is Changing</h2>
+                                <p>Don't be left behind!  Invest today and be part of the revolution.</p>
+                                ></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/currency.jpeg" class="img_scroll" data-src="" alt="Second slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>Keep Track of Your Crypto</h2>
+                                <p>Your personal Profit / Loss Portfolio Monitor for over 1,500 Digital Coins</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/market.jpeg" class="img_scroll" data-src="" alt="Third slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h2>Make Smarter Investments</h2>
+                                <p>Review historical and real-time data of coin values to make more informed decisions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div><!-- /.carousel -->
+
+<h3 class="trending_title">Top 10 Trending Coins</h3></div>
+<div class="trending">
 <p>
-
-
-<% @coins %>
-
-<% for x in @coins %>
-	<% for coin in @trending %>
-		<% if coin == x["symbol"] %>
-			Coin:  <%= x["name"] %></br> Current Price: $<%= x["price_usd"] %></br>Current Rank:  <%= x["rank"] %></br></br>
+	<% i = 0 %>
+	<div class="column1">
+	<% @coins.each do |c| %>
+		<%if i <= 4 %>
+			<div class="box">
+				Rank: <%= c['rank']%> of  1,600</br>
+				Symbol: <%= c['symbol']%></br>
+				Coin:  <%= c['name']%></br>
+				Current Price:  <%= number_to_currency(c['price_usd'])%></br>
+				In Circulation: <%= number_with_delimiter(c['total_supply']) %></br>
+				Max Supply: <%= number_with_delimiter(c['max_supply']) %></br>
+				Percent Change 1 Hr: <%= c['percent_change_1h'] %>%</br>
+				Percent Change 24 Hrs: <%= c['percent_change_24h'] %>%</br>
+				Percent Change 7 Days: <%= c['percent_change_7d'] %>%</br>
+				<% i += 1 %>
+			</div>
 		<% end %>
 	<% end %>
-<% end %>
+	</div>
+
+<% x = 0 %>
+<div class="column2">
+	<% @coins[5..-1].each do |c| %>
+		<%if x <= 4 %>
+				<div class="box">
+				Rank: <%= c['rank']%> of 1,600</br>
+				Symbol: <%= c['symbol']%></br>
+				Coin:  <%= c['name']%></br>
+				Current Price:  <%= number_to_currency(c['price_usd'])%></br>
+				In Circulation: <%= number_with_delimiter(c['total_supply']) %></br>
+				Max Supply: <%= number_with_delimiter(c['max_supply']) %></br>
+				Percent Change 1 Hr: <%= c['percent_change_1h'] %>%</br>
+				Percent Change 24 Hrs: <%= c['percent_change_24h'] %>%</br>
+				Percent Change 7 Days: <%= c['percent_change_7d'] %>%</br>
+				<% x += 1 %>
+				</div>
+		<% end %>
+	<% end %>
+</div>
 </p>
+
+</div>
+

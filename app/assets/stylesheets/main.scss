@@ -2,3 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.box {
+	border: 2px solid black;
+	margin: 5px;
+	padding: 5px;
+	width: 300px;
+	margin-left: -140px;
+	font-size: 18px;
+}
+
+.column1 {
+	display: inline-block;
+}
+
+.column2 {
+	padding: 20px;
+	display: inline-block;
+	margin-left: 125px;
+}
+
+.navbarbrand {
+
+}
+
+// h1 titles on each page
+.main-title {
+	color: #FF007B
+}
+
+.main-index-body {
+	// background-color: #FF007B;
+}
+
+// index page carousel images
+.img_scroll {
+	width: 100%;
+}
+
+.top-index {
+	// margin-left: 100px;
+	// position: absolute;
+}
+
+.trending_title {
+	// margin-left: 440px;
+	margin-left: 38%;
+}
+
+// top 10 trending coins on the main index page
+.trending {
+	// margin-left: 550px;
+	margin-left: 38%;
+}
+
+// search results that populate
+.search-results {
+	font-size: 20px;
+	margin-bottom: 40px;
+	position: absolute;
+}
+
+// list of 1600 coins
+.all-coins {
+
+}
