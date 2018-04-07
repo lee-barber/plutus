@@ -40,7 +40,7 @@ Did you break it?  Please [contact me](mailto:lee@leebarber.io) and let me know 
 
 ## Versioning
 
-I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/lee-barber/Plugus/tags). 
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/lee-barber/plutus/tags). 
 
 ## Authors
 
