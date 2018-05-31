@@ -50,4 +50,4 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-Icons made by [Freepik](http://www.freepik.com" title="Freepik) from [Flaticon](http://www.flaticon.com" title="Freepik).  Flaticon is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0").
+Icons made by [Freepik](http://www.freepik.com" title="Freepik") from [Flaticon](http://www.flaticon.com" title="Freepik").  Flaticon is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0").
